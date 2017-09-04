@@ -9,8 +9,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.baidu.android.common.logging.Log;
+import com.turing.androidsdk.TTSManager;
 import com.turing.androidsdk.TuringManager;
 
 
@@ -25,15 +27,20 @@ public class MainActivity extends AppCompatActivity {
     private Button send;
     private MsgAdapter adapeter;
     public List<Msg> msgList = new ArrayList<Msg>();
-    private String tulingKey = "4fbaa4ade654457ebde10564d7392023";
-    private String secert = "f835298cf70bbc05";
-    private TuringManager turingManager;
+//    private String tulingKey = "4fbaa4ade654457ebde10564d7392023";
+//    private String secert = "f835298cf70bbc05";
+//    private TuringManager turingManager;
     private call call1;
-//    private int i = 0;
-//    private Msg []txt = new Msg[100];
+    private SockClient socket1;
+
+//    百度语音的API
+
+//    private String bdKey = "AQOF1p6FISfLgiVN6RyXACfw";
+//    private String bdSecery = "5655be6a30f6556a3c9312b31576c900";
+//    private Button talkTTS;
 
 
-
+//    private TTSManager ttsManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         msgListView = (ListView) findViewById(R.id.msg_list_view);
         msgListView.setAdapter(adapeter);
         call1 = new call(msgList, adapeter, msgListView);
+        socket1 = new SockClient(msgList,adapeter,msgListView);
+        socket1.start();
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,9 +64,8 @@ public class MainActivity extends AppCompatActivity {
                     adapeter.notifyDataSetChanged();
                     msgListView.setSelection(msgList.size());
                     inputText.setText("");
-                    turingManager = new TuringManager(MainActivity.this, tulingKey, secert);
                     Log.i("info", content);
-                    call1.backcall(turingManager, content);
+                    socket1.setOutput(content);
                 }
             }
 

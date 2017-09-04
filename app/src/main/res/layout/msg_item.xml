@@ -13,7 +13,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:scaleType="fitXY"
-            android:src="@drawable/icon"
+            android:src="@drawable/turing"
             android:layout_margin="10dp"/>
         <TextView
             android:layout_width="wrap_content"
@@ -25,7 +25,6 @@
             android:paddingBottom="5dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:background="#fff"
             android:elevation="2dip"
             android:textColor="#222"/>
     </LinearLayout>
@@ -39,12 +38,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/right_msg"
-            android:textColor="#eee"
+            android:textColor="#002"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:background="#6EB6FF"
             android:layout_gravity="center"
             android:elevation="2dip"
             android:layout_margin="10dp"/>
@@ -53,7 +51,7 @@
             android:layout_height="45dp"
             android:scaleType="fitXY"
             android:layout_margin="10dp"
-            android:src="@drawable/chris"/>
+            android:src="@drawable/me"/>
     </LinearLayout>
 
 </LinearLayout>

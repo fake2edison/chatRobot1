@@ -18,6 +18,7 @@ public class call{
     public List<Msg> msgList;
     private MsgAdapter adapeter;
     private ListView msgListView;
+
     public void backcall(TuringManager turingManager, String content){
         turingManager.setHttpRequestListener(new HttpRequestListener() {
             @Override
@@ -44,6 +45,5 @@ public class call{
         this.msgListView = msgListView;
         this.msgList = msgList;
         this.adapeter = adapeter;
-        Log.i("info",String.valueOf(msgList.size())+"call()");
     }
 }

@@ -11,9 +11,10 @@ android {
     }
     compileSdkVersion 24
     buildToolsVersion "25.0.2"
+
     defaultConfig {
         applicationId "com.example.fake2edison.chatrobot"
-        minSdkVersion 21
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
